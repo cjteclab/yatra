@@ -8,9 +8,9 @@ At github I additionally maintain a repository project that allow me to collect 
 ## This repository contains
 1. research_log : A daily note taking file, at which I track all my research.
 2. A subdirectory for each of my main subjects:
-  - data_science
   - computer_science
-  - software_development
+  - data_science
   - it_consulting
-  - linux
   - it_security
+  - linux
+  - software_development
