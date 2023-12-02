@@ -234,3 +234,38 @@ Fork is another way of saying clone or copy. So, unlike a branch, a fork is inde
 		fork creates a completely indepented copy of Git repository. A clone in contrast creates a linked copy that will continue to synchronize with the target repository.
 - Fetch vs. pull
 	- pull == fetch + merge , while fetch only update without merge
+
+### Markdown
+
+## 20231202
+
+### Git commands
+
+### Learning strategy
+I have to adopt my learning strategy. In the past I always wrote down every
+command or every shortcut. But then I never used the notes, because I searched 
+the internet for the right answer. So it makes no sense to write down commands.
+
+But what does make sense?
+
+1. Knowing what possibilities you have (in a logic way) and what you may can 
+do? **Functional knowledge**
+
+2. Where you can find information? **Locational knowledge** 
+  1. Using commands like **help** and **manual pages**
+  2. Internet : Important bookmarks, stackoverflow
+  3. Advanced : Forums
+
+3. Collecting commands and other things I active using **Actional knowledge**
+
+### Bash scripting
+
+- Each script starts with the line: `#!/bin/bash`
+- 3 file descriptors (3 return values): stdin, stdout(1), stderr(2)
+- redirection outputs *>*
+  - there a some combination between stdout & stderr
+    - redirect stdout to stderr and vise-versa: *a>&b* -> link a to b 
+    - redirect both to stderr or stdout
+    - redirect both to a file: *>&*
+- pipes : use the output of a program as the input of another one : *|*
+
