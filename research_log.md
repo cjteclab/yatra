@@ -261,11 +261,23 @@ do? **Functional knowledge**
 ### Bash scripting
 
 - Each script starts with the line: `#!/bin/bash`
-- 3 file descriptors (3 return values): stdin, stdout(1), stderr(2)
+- 3 file descriptors (3 return values): stdin(0), stdout(1), stderr(2)
 - redirection outputs *>*
   - there a some combination between stdout & stderr
     - redirect stdout to stderr and vise-versa: *a>&b* -> link a to b 
     - redirect both to stderr or stdout
     - redirect both to a file: *>&*
 - pipes : use the output of a program as the input of another one : *|*
+@ToDo : get a collection of bash commands (eg. echo, sed)
+- variables
+  - have no datatype
+  - can contain a number(only int), character, string
+  - you get the value of the variable by writing: "*$*variable"
+  - you can define local variables: `local [variable]=value
+- functions
+  - `function [name] {}
+  - call a function by only typing its name
+  - handling arguments is a little bit strange, parameters in the function def do not exist.
+    - in function body: *$1* -> means take the first argument
+    - arguments are set by: `[function_name] argument
 
