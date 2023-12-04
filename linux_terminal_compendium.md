@@ -1,4 +1,4 @@
-# Linux Terminal Compendium
+#Linux Terminal Compendium
 
 Structure of this compendium:
 
@@ -20,17 +20,30 @@ Structure of this compendium:
 	- see alexandria
 1. Efficient Linux at the Command Line. Boost Your Command-Line Skills (Daniel Barret)
 	- see alexandria
+	- full pdf
 1. Grundlagen und Praxis der Bash- und C-Programmierung in Unix/Linux (Antonova/Slaveva)
 	- see alexandria
 1. The Linux Command Line (William Shotts)
-
+	- see alexandria
+	- full pdf
 1. Pro Bash. Learn to Script and Program the GNU/Linux Shell (Jayant Varma)
-
+	- see alexandria
 1. bash Cookbook. Solutions and Examples for bash users (Albing/Vossen)
-
+	- see alexandira
+	- full pdf
 1. Mastering Linux Shell Scripting. A practical guiede to Linux command-line (Ebrahim/Mallett)
-
+	- table of content not found
 1. bash Idioms. Write Powerful, Flexible, Readable Shell Scripts (Albing/Vossen)
-
-
+-	- table of content not found
+1. From Bash to Z Shell. Conquering the Command Line (Kiddle/Peek/Stephenson)
+	- see alexandria
+1. Advanced Bash-Scripting Guide (Mendel Cooper)
+	- see alexandria
+	- full pdf
+1. Bash Guide for Beginners (Bachtelt Garrels)
+	- see alexandira
+	- full pdf
+1. Bash Reference Manual
+	- see alexandria
+	- full pdf
 
