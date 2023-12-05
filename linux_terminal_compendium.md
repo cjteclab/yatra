@@ -47,3 +47,107 @@ Structure of this compendium:
 	- see alexandria
 	- full pdf
 
+## Iterativ listing of 'table of content'
+### Linux Kommandoreferenz
+- All terminal commands are listed. They are ordered in subthemes:
+1. Dateien verwalten
+  - cat, cd, chgrp, chmod, chown, cp, dircolors, file, inotifywait, j, ln, ls,
+mkdir, mv, namei, rdfind, rename, rm rmdir, rsync, stat, tee, touch, tree, truncate,
+umask
+2. Dateien suchen
+  - ack, egrep, find, grep, locate, updatedb, whereis, which
+3. Dateien kompimieren und archivieren
+  - bunzip2, bzip2, compress, cpio, gunzip, gzip, lzop, tar, uncompress, unxz,
+unzip, xz, zip, zipinfo
+4. Textdateien verarbeiten
+  - awk, cat, column, csplit, cut, diff, expand, fold, grep, head, iconv, less,
+more, multitail, paste, patch, recode, sed, sort, split, strings, tac, tail, tr,
+unexpand, uniq, zcat, zless, zmore
+5. Accress Control Lists (ACLs) and Extended Attributes (EAs)
+  - attr, chacl, getcap, getfacl, getfattr, setcap, setfacl, setfattr
+6. Konverter
+  - avconc, convert, dvips, enscript, epstopdf, exiftool, ffmpeg, iconv, lame,
+mogrify, mpage, pandoc, paps, pdf2ps, pdfimages, pdftk, pdftops, pdftotext, ps2pdf,
+recode
+7. Prozesse verwalten
+  - at, atq, atrm, batch, bg, chroot, contab, disown, fg, fuser, glances, halt,
+history, htop, iftop, ionice, iotop, kill, killall, ldconfig, ldd, lsof, nice,
+nohup, parallel, pidof, powertop, ps, pstree, reboot, renice, sudo, timeout, top,
+uptime, watch
+8. Benutzer und Gruppen verwalten
+  - addgroup, adduser, chage, chgrp, chown, chpasswd, chsh, delgroup, deluser,
+groupadd, groupdel, groupmod, groups, gpasswd, id, last, lastb, makepasswd, mkpasswd,
+newgrp, newusers, passws, pwgen, useradd, userdel, usermod, vigr, vipw, visudo, who
+9. Dateisystem administrieren
+  - badblocks, blkid, btrfs, cfdisk, cryptsetup, dd, df, du, dumpe2fs, e4defrag,
+exfatlable, findmnt, fstrim, kpartx, lsblk, mdadm, mkfifo, mkfs, mknod, mkswap,
+mount, ncdu, parted, partprobe, partx, resize2fs, sfdisk, sgdisk, smartctl, snapper, 
+swapoff, swapon, sync, tune2fs, umount, xfs_admin, xfs_growfs, xfs_info, xfs_repair
+10. Logical Volume Manager (LVM)
+  - lvcreate, lvdisplay, lvextend, lvm, lvreduce, lvremove, lvrename, lvscan, pvcreate,
+pvdisplay, pvremove, pvscan, vgchange, vgcreate, vgdisplay, vgextend, vgmerge,
+vgreduce, vgrename, vgscan
+11. SELinux und AppArmor
+  - aa-complain, aa-disable, aa-enforce, aa-status, chcon, getenforce, restorecon, 
+sealert, sestatus, setenforce, setsebool
+12. Paketverwaltung
+  - apk, apt, add-apt-repository, alien, alternatives, apt-cache, apt-get, apt-key,
+aptitude, cnf, dnf, dpkg, flatpak, gdebi, pip, pkcon, ppa-purge, repoquery,
+rpm, rpm2archive, rpm2cpio, snap, tasksel, ubuntu-security-status, update-alternatives,
+yum. zypper
+13. Netzwerk administrieren
+  - cadaver, curl, dhclient, dig, etherwake, ethtool, exportfs, firewall-cmd, ftp,
+host, hostname, hostnamectl,ifconfig, ifdown, ifup, ip, ipcalc, iptables, iptables-resotre,
+iptables-save, iptables-xml, iw, iwconfig, iwlist, mtr, nft, netplan, netstat, networkctl, 
+newaliases, nmap, rnmcli, openssl, ping pnuke, postconf, postqueue, pscp, pssh, rdiff-backup,
+rfkill, route, rpcinfo, rsync, scp, sftp, showmount, smbclient, smbtree, ss, ssh, ssh-copy-id,
+telnet, traceroute, ufw, wakeonlan, wget, whois, wol, wpa_passphrase
+14. Hacking and Security
+  - arp-scan, chkrootkit, fail2ban-client, hydra, john, nc, ngrep, nmap, rkhunter, tcpdump
+15. Drucker-, Datenbank- und Server-Administration
+  - acme.sh, certbot, htpasswd, lpadmin, lpinfo, lpoptions, lpq, lpr, lprm, lpstat,
+mysql, mysqladmin, mysqlbinlog, mysqldump, smbpasswd, sqlite3
+16. Audio-Funktionen und Hardware-Verwaltung
+  - acpi, alsactl, alsamixer, amixer, boltctl, free, fwupdmgr, hwclock, kbdrate,
+localectl, lscpu, lshw, lspci, lsscsi, lsusb, nproc, pactl, paplay, parecord, powertop,
+speaker-test, timedatectl, vcgncmd
+17. Bluetooth
+  - bluethoothctl, hciconfig, hcitool, l2ping, rfkill, sdptool
+18. Kernel
+  - canocical-livepatch, depmod, dmesg, dracut, insmod, kexec, lsmod, modinfo,
+modprobe, uname,update-initramfs
+19. Systemstart und -stopp, Init-System, Logging und GRUB
+  - efibootmgr, grub-install, grub-mkconfig, init, journalctl, logger, loginctl, 
+needs-restarting, service, shutdown, systemctl, updsate-grub
+20. Virtualisierung & Co. (Cloud, Docker, libvirt, KVM, Vagrant)
+  - aws, docker, docker-compose, kvm, qemu-img, qemu-kvm, qemu-nbd, virsh, virt-clone,
+virt-install, virt-viewer, wsl
+21. Terminal und Textkonsole
+  - echo, loadkeys, printf, reset, screen, setfront, setterm
+22. Online-Hilfe
+  - apropos, help, info, man, whatis
+23. Grafiksystem und Gnome
+  - chvt, dconf, fc-list, fgconsole, glxinfo, gnome-session-quit, gsettings,
+gtf, nvidia-xconfig, tvservice, xdpyinfo, xhost, xinput, xkill, xrandr, xset, zenity
+24. Sonstiges
+  - alias, basename, cksum, date, dirname, expr, git, gpio, hash, ldd, lsb_release, mail,
+md5sum, printenv, qalc, reapsi-gpio, raspisstill, raspivid, seq, set, sha512sum, sleep,
+strace, svn, time, tty, type, unalias, uname, xargs
+25. bash-Programming
+  - break, case, continue, exit, for, function, if, local, source, test, until, while
+26. bash-Variablenverwaltung
+  - alias, declare, export, local, read, readonly, shift, unalias, unset
+27. Weitere bash-Kommandos und -Sonderzeichen
+  - dirs, disown, eval, popd, pushd, trap, ulimit, wait, #&%!
+28. Konfigurationsdateien
+  - adduser.conf, aliases, bashrc, config.txt, corontab, deluser.conf, dhcpcd.conf,
+dnf.conf, fstab, group, grub, grub.cfg, gshadow, host.conf, hostname, hosts, ifcfg-xxx,
+inittab, interfaces, journald.conf, locale.conf, login.defs, mdadm.conf, modules, netplan.yaml,
+networkd.network, nsswitch.conf, os-release, passwd, profile, rc.local, resolv.conf, rsyslog.conf,
+services, shadow, sources.list, sudoers, sysctl.conf, systemd.service, systemd.timer, vconsole.conf,
+wpa_supplicant.conf, xorg.conf, yum.conf
+29. Tastenkuerzel
+  - bash, emacs, fdisk, gnome-terminal, grub, info, joe, konsole, less, man, mutt, nano, screen, vim 
+
+### Shell-Programmierung
+
