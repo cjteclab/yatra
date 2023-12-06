@@ -392,5 +392,16 @@ XVII: Befehle
   - Initialisierungsdateien der Shells
   - Signale
   - Sonderzeichen und Zeichenklassen 
+
 ### Pro Bash. Learn to Script and Program the GNU/Linux Shell
+I:
+1. Naming of Scripts
+2. Selecting a directory for the Script
+3. Creating the File and Running the Script
+II: Input, Output and Throughput
+4. Parameters and Variables
+  - Positional Parameters
+  - Special \*@#0$?\_! Parameters
+  - Arguments and Options 
+  - echo, and
 
