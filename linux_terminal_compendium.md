@@ -23,6 +23,7 @@ Structure of this compendium:
 	- full pdf
 1. Grundlagen und Praxis der Bash- und C-Programmierung in Unix/Linux (Antonova/Slaveva)
 	- see alexandria
+	- no important new input
 1. The Linux Command Line (William Shotts)
 	- see alexandria
 	- full pdf
@@ -150,4 +151,246 @@ wpa_supplicant.conf, xorg.conf, yum.conf
   - bash, emacs, fdisk, gnome-terminal, grub, info, joe, konsole, less, man, mutt, nano, screen, vim 
 
 ### Shell-Programmierung
+I: Einfuehrung
+1. Was ist eine Shell?
+  - Was ist ein Shellscript?
+  - Vergleich mit anderen Sprachen
+2. Kommando, Programm oder Shellscript?
+  - Shell-eigene Kommandos (Builtin-Kommandos)
+  - Aliase in der Shell
+  - Funktionen in der Shell
+  - Shellscripts (Shell-Prozeduren)
+  - Programme (binaer)
+3. Die Shell-Vielfalt
+  - ksh (Korn-Shell), Bash (Bourne-Again-Shell), zsh (Z-Shell), ash (A-Shell),
+rbash, rzsh (Restricted Shell), tcsh (TC-Shell), rsh, ssh
+4. Crashkurs: einfacher Umgang mit der Kommandozeile
+5. Shellscripts schreiben und ausfuehren
+  - Der Editor
+  - der Name des Shellscripts
+  - Ausfuehren
+  - Hintergrundprozesse starten
+  - Ausfuehrende Shell festlegen
+  - Stil
+  - Ein Shellscript beenden
+  - Testen und Debuggen von Shellscripten
+  - Ein Shellscript, das ein Shellscript erstellt und ausfuehrt
+6. Vom Shellscript zum Prozess
+  - Ist das SHellscript ein Prozess?
+  - Echte Login-Shell?
+7. Datenstrom
+  - Ausgabe umleiten
+  - Standardfehlerausgabe umleiten
+  - Eingabe umleiten
+  - Pipes
+  - Ein T-Stueck mit tee
+  - Ersatzmuster (Wildcards)
+  - Brace Extension
+  - Muster-Alternativen
+  - Tilde-Expansion
+II: Variablen
+8. Grundlagen
+  - Zugriff aud den Wert einer Variablen
+  - Variablen-Interpolation
+9. Zahlen
+  - Integer-Arithmetik
+  - bc - Rechnen mit Fliesskommazahlen und mathematischen Funktionen
+10. Zeichenketten
+  - Stringverarbeitung
+  - Erweiterte Funtkionen
+11. Quaotings und Kommando-Substitution
+  - Single und Double Quotings
+  - Kommando-Substitution - Back Quotes
+12. Arrays
+13. Variablen exportieren
+14. Umgebungsvariablen eines Prozesses
+15. Shell-Variablen
+16. Automatische Variablen der Shell
+  - $0, $$, $?, $!, 
+III: Parameter und Argumente
+17. Kommandozeilenparameter $1 bis $9
+18. Besondere Parameter: $\*, $@, $#
+19. Der Befehl shift
+20. Argumente und Leerzeichen
+21. Argumente jenseits von $9
+22. Argumente setzen mit set und Kommando-Substitution
+23. getopts - Kommandozeilenoptionen auswerten
+24. Vorgabewerte fuer Variablen
+IV: Kontrollstrukturen
+25. If, else, elif
+26. Das Kommando test 
+  - Ganze Zahlen vergleichen
+  - Zeichenketten vergleichen
+27. Status von Dateien erfragen
+28. Logische Verknuepfung von Ausdruecken
+  - Negationoperator !, UND (-a / &&), ODER (-o / ||)
+29. Short Circuit-Tests - ergebnisabhaengige Befehlsausfuerhung
+30. Case
+  - Alternative Vergleichsmuster
+  - Case und Wildcards
+  - case und Optionen
+31. Schleifen
+  - For-Schleife
+  - While-Schleife
+  - unitl-Schleife
+32. Kontrollierte Spruenge
+  - continue
+  - break
+V: Terminal Ein- und Ausgabe
+33. Ausgabe
+  - Befehl echo
+  - print
+  - Befehl printf
+  - Befehl tput - Terminalsteuerung
+34. Eingabe
+  - Befehl read : Zeilenweise lesen einer Datei/mit einer Pipe
+  - Here-Dokumente
+  - Variable IFS
+  - Arrays einlesen
+  - Einzelne Zeichen abfragen
+  - Passworteingabe
+35. Umlenken mit dem Befehl exec
+36. Filedeskriptoren
+37. Named Pipes
+38. Menues mit select
+VI: Funktionen
+39. Definition
+  - Funktionsaufruf
+  - Funktionen exportieren
+  - Aufrufreihenfolge
+  - Aufrufe selbst bestimmen
+  - Funktionen auflisten
+40. Funktionen die Funktionen aufrufen
+41.  Parameteruebergabe
+  - FUNCNAME
+42. Rueckgabewerte aus einer Funktion
+  - return
+  - echo / Kommando-Substitution
+  - Funktionen und exit
+43. Locale contra globale Variablen
+44. alias und unalias
+45. Autoload
+VII: Signale
+46. Gurndlagen zu den Signalen
+47. Signale senden - kill
+48. Eine Fallgrube fuer Signale - trap
+  - Einen Signalhandler (Funktion) einrichten
+  - Mit Signalen Schleifendurchlaeufe abbrechen
+  - Mit Signalen das Script beenden
+  - Das Beenden der Shell (oder eines Scripts) abfangen
+  - Signale ignorieren
+  - Signale zuruecksetzen
+VIII: RUnd um die Ausfuehrung von Scripts und Prozessen
+49. Prozessprioritaeten
+50. Warten auf andere Prozesse
+51. Hintergrundprozesse wieder hervorholen
+52. Hindergrundprozesse schuetzen
+53. Subshells
+54. Mehrer Scripts verbinden und ausfuehren (Kommunikation zwischen Scripten)
+  - Datenuebergabe
+  - Rueckgabe von Daten
+  - Scripts synchronosieren
+55. Jobverwaltung
+56. Shellscripts zeitgesteuert ausfuehren
+57. Startprozess- und Profildaten der Shell
+  - Arten von Initialisierungsdateien
+  - Ausfuehren von Profildateien beim Start einer Login-Shell
+  - Ausfuehren von Profildateien beim Start einer Nicht-Login-Shell
+  - Zusammenfassung all Profil- und Startup-Dateien
+58. Ein Shellscript bei der Ausfuehrung
+  - Syntaxueberpruefung
+  - Expansionen
+  - Kommandos
+IX: Nuetzliche Funktionen
+  - eval, xargs, dirname/basename, umask, ulimit, time, typeset
+X: Fehlersuche und Debugging
+59. Stragegien zum Vermeiden von Fehlern
+  - Planung, Testsystem bereitstellen, Ordnung
+60. Fehlerarten
+61. Fehlersuche
+  - Trace mit set -x
+  - DEBUG- und das ERR-Signal
+  - Variablen und Syntax ueberpruefen
+  - Debug-Ausgabe hinzufuegen
+  - Debugging-Tools
+XI: Regulaere Ausdruecke und grep
+62. Regulaere Ausdruecke
+63. grep
+  - grep mit Regex, grep mit Pipes, grep mit Optionen, egrep, fgrep, rgrep
+XII: Der Stream-Editor sed
+64. Funktions- und Anwendungsweise von sed
+  - Grundlegende Funktionsweise
+  - Wohin mit der Ausgabe?
+65. Adressen
+66. Kommandos, Substitutionsflags, Optionen von sed
+  - Kommandos: a, c, d, h/H/g/G/x (Puffer), i, p, q, r, w, s, y
+  - sed-Scripts
+XIII: awk-Programmierung
+67. Einfuerhung und Grundlagen von awk
+  - History und Versionen
+  - Funktionsweise von awk
+68. Aufruf von awk-Programmen
+  - Aufbau eines awk-Kommandos
+  - Kommandozeilen-Optionen
+  - awk aus Kommandozeile aufrufen
+  - awk in Shellscripts aufrufen
+  - awk als eigenes script aufrufen
+69. Grundlegende awk-Programme und -Elemente
+  - Ausgabe von Zeilen und Zeilennummer
+  - Felder
+70. Muster (bzw. Adressen) von awk-Scripts
+  - Zeichenkettenvergleich
+  - Vergleichsausdruecke
+  - Regulaere Ausdruecke
+  - Zusammengesetzte Ausdruecke
+71. Komponenten von awk-Scripts
+  - Variablen, Arrays, Operatoren, Kontrollstrukturen
+72. Funktionen
+  - Mathematische Funktionen
+  - Funktionen fuer Zeichenketten
+  - Funktionen fuer Zeiten
+  - Systemfunktionen
+  - Ausgabefunktionen
+  - Eingabefunktionen
+XIV: Kommandoreferenz
+  - Dateiorientierte Kommandos
+  - Verzeichnisorientierte Kommandos
+  - Verwaltung von Benutzern und Gruppen
+  - Programm- und Prozessverwaltung
+  - Speicherplatzinformationen
+  - Dateisystem-Kommandos
+  - Archivierung und Backup
+  - Systeminformationen
+  - System-Kommandos
+  - Druckeradministration
+  - Netzwerkbefehle
+  - Benutzerkommunikation
+  - Bildschirm- und Terminalkommandos
+  - Online-Hilfen
+XV: Praxis
+73. Datei-Utilitys
+  - Leerzeichen im Dateinamen ersetzen, Dateiendungen veraendern, Dateien in zwei 
+Verzeichnissen vergleichen, Dateien in mehreren Verzeichnissen aendern
+74. Systemadministration
+  - Benutzerverwaltung, Systemueberwachung
+75. Backup-Strategien
+  - Varianten, bestimmte Bereiche, Backup ueber ssh mit tar, rsync
+76. Das World Wide Web und HTML
+  - Analysieren von access_log, error_log
+77. CGI (Common Gateway Interface)
+  - CGI-Scripts ausfuehren, CGI-Environment ausgeben
+XVI: GUIs und Grafik
+78. dialog und Xdialog
+79. gnuplot - Visualisierung von Messdaten
+XVII: Befehle
+  - Shell-Builtin-Befehle
+  - Externe Kommandos
+  - Shell-Optionen
+  - Shell-Variablen
+  - Kommandozeile editieren
+  - Wichtige Tastenkuerzel (Kontrolltasten)
+  - Initialisierungsdateien der Shells
+  - Signale
+  - Sonderzeichen und Zeichenklassen 
+### Pro Bash. Learn to Script and Program the GNU/Linux Shell
 
