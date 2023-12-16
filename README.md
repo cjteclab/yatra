@@ -14,3 +14,50 @@ At github I additionally maintain a repository project that allow me to collect 
   - it_security
   - linux
   - software_development
+
+
+## Map/Overview of the second journey
+
+# Yatra                                                                        
+## Personal Growth                                                             
+### English                                                                    
+### 10FingerTyping                                                             
+## Programming                                                                 
+### Languages                                                                  
+#### Python                                                                    
+#### C/C++                                                                     
+#### Rust                                                                      
+### Tools                                                                      
+#### OOP                                                                       
+#### TDD                                                                       
+#### CI/CD                                                                     
+### Coding/Skills/Principles                                                   
+#### Agile Development / SCRUM                                                 
+#### Reading Code                                                              
+#### Problem Solving                                                           
+#### Coding Competition                                                        
+## Linux                                                                       
+### Administration                                                             
+### System                                                                     
+### Network                                                                    
+### Bash                                                                       
+#### Bash Scripting                                                            
+### Distributions                                                              
+#### Arch                                                                      
+#### Gentoo                                                                    
+#### Building my own distribution                                              
+##### LFS/BLFS                                                                 
+## Computer Science                                                            
+### Algorithms                                                                 
+### Data Structure                                                             
+## Utilities 
+### vim/neovim                                                                 
+### vscode                                                                     
+### git                                                                        
+### i3-wm                                                                      
+### tmux                                                                       
+### dockers/kubernetes                                                         
+## IT Consulting                                                               
+## IT Security                                                                 
+## Data Science                                                                
+## Library               
