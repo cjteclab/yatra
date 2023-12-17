@@ -260,7 +260,14 @@ do? **Functional knowledge**
 
 ### Bash scripting
 
-- Each script starts with the line: `#!/bin/bash`
+- Each script (can) starts with the line: `#!/bin/bash`
+  - called: **Shenbang-Row**
+  - with this line the file is executed  if the file is called via terminal
+  - without this line, you can make your script executable by changing the 
+execution rights: `$ chmor +x /path/[name].sh`
+  - but you can also run it by calling the interpreter: `$ bash [name].sh`
+- each shell has a different collection on supported commands
+- for a shell script the shell servers as **interpreter**
 - 3 file descriptors (3 return values): stdin(0), stdout(1), stderr(2)
 - redirection outputs *>*
   - there a some combination between stdout & stderr
@@ -270,14 +277,161 @@ do? **Functional knowledge**
 - pipes : use the output of a program as the input of another one : *|*
 @ToDo : get a collection of bash commands (eg. echo, sed)
 - variables
+  - **no space** in assignment: `variable=value`
   - have no datatype
   - can contain a number(only int), character, string
   - you get the value of the variable by writing: "*$*variable"
-  - you can define local variables: `local [variable]=value
+  - you can define local variables: `local [variable]=value`
+  - *double quotation marks* : have not the meaning of strings. They connect
+the commands/attributes and masked their function (but not all function e.g. `$`.
+    - in quotation marks you can use variables with: ${[name]}
+    - to mask all functions you have to use **single quotation marks**
 - functions
-  - `function [name] {}
+  - `function [name] {}`
   - call a function by only typing its name
   - handling arguments is a little bit strange, parameters in the function def do not exist.
     - in function body: *$1* -> means take the first argument
-    - arguments are set by: `[function_name] argument
+    - arguments are set by: `[function_name] argument`
+- test if sh-file still exists: `$ type [name].sh`
+- script can be make executeable for the system: == can be run from every user by `$ [name].sh`
 
+## 20231216
+
+Making a map for my yatra
+
+# Yatra
+@ -> ~/journey/thoughts/journey_map.md
+## Personal Growth
+@ -> ~/coding/notes/quotes.md
+### English
+### 10FingerTyping
+## Programming
+### Languages
+#### Python
+@ coding conventions - pep8 -> ~coding/Coding-Lessons/About_Coding_Conventions/About_Coding_Conventions.md
+#### C/C++
+#### Rust
+### Tools
+#### OOP
+#### TDD
+@ -> ~/coding/journey/tools/tdd.md
+#### CI/CD
+### Coding/Skills/Principles
+@ booklist | get summaries -> ~coding/blog/literature.md literture_abstract.md -> personal coding manifest
+@ -> ~/journey/softwaredevelopment/personal_dev_philosophy.md
+@ -> ~/coding/tool_box/code_standards.md
+@ -> ~/journey/workingtechniques/dailyroutine.md
+@ terms -> ~coding/journey/terms.md
+#### Agile Development / SCRUM
+@ -> ~journey/softwaredevelopment/the_art_of_agile_development.md
+#### Reading Code
+@ -> ~/coding/tool_box/reading_code.md
+#### Problem Solving
+@ -> ~/coding/tool_box/problem_solwing.md
+#### Coding Competition
+@ codeforce
+## Linux
+@ -> ~/coding/tool_box/linux.md
+@ -> ~/journey/linux/create_personal_distribution.md
+### Administration
+### System
+### Network
+### Bash
+@ -> ~/journey/linux/terminal_commands.md
+@ -> ~/journey/linux/terminal_knowhow.md
+#### Bash Scripting
+### Distributions
+#### Arch
+#### Gentoo
+#### Building my own distribution
+@ -> ~/coding/linux/explore_linux.md
+@ -> ~/journey/linux/software_requirements.md
+##### LFS/BLFS
+## Computer Science
+@ Numerical Systems
+### Algorithms
+### Data Structure
+## Utilities
+@ -> ~/coding/tool_box/keybindings.md
+### vim/neovim
+### vscode
+@ -> ~coding/tool_box/vscode.md
+### git
+### i3-wm
+### tmux
+### dockers/kubernetes
+## IT Consulting
+@ -> ~/coding/tool_box/itconsulting.md
+## IT Security
+@ -> ~/journey/it_security/notes_syllabus.md
+## Data Science
+## Library
+
+
+## 20231216
+### Worklow vim/i3/tmux
+source: https://www.youtube.com/watch?v=bdumjiHabhQ
+
+#### i3
+- every workspace represent a specific item
+
+#### tmux
+
+## 20231217
+### i3
+source: https://en.wikipedia.org/wiki/I3_(window_manager)
+
+- i3 is a tiling window manager
+	- @ what is a tiling window manager: a window manager with an organization
+of the screen into **mutually non-overlapping** frames
+	- supports tiling, stacking and tabbing
+- written in C
+- based on X11
+- use xcb as API
+- special key "Mod1" --> standard (alt), personal preference (Super==win,apple)
+- configuration via ~/.config/i3/config
+
+source: https://wiki.archlinux.org/title/i3
+
+- structure of i3: main building block are **containers**. Container can be tiled,
+tabbed or stacked
+
+#### Official user guide
+source: https://i3wm.org/docs/userguide.html
+
+- every container has an orientation (horizontal, vertical or unspecified, 
+depends on the layout the container is in). Each subcontainter is arranged by the 
+parent orientation.
+
+[mod] - modifier key
+[mod + Enter] - opens a terminal
+[mod + h/j/k/l] - switch focus of window --> must be configurated
+[mod + v] - split window vertically !must be pressed before creating new window
+[mod + h] - split window horizontally !must be pressed before creating new window -- 
+[mod + Shift + q] - close/kill window (depence on application support)
+[mod + a] - focus the parent container
+
+changing container layout
+[mod + e] - tiling/splith
+[mod + s] - stacked
+[mod + w] - tabbed
+[mod + shift + space] - change into floating mode 
+
+dmenu
+[mod + d] - open the dmenu
+
+Working with workspaces
+[mod + #num] - switch workspace
+[mod + shift + #num] - moving window to workspace
+
+### tmux
+source: https://github.com/tmux/tmux/wiki/Getting-Started
+
+- a terminal multiplexer
+
+terms
+pane, window, session
+- each window has a name
+- panes have pane-boardes. There is always one active pane
+- multiple windows are grouped into session (but windows can be linked to multiple
+sessions).

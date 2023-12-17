@@ -403,5 +403,233 @@ II: Input, Output and Throughput
   - Positional Parameters
   - Special \*@#0$?\_! Parameters
   - Arguments and Options 
-  - echo, and
+  - echo, and why should avoid it
+  - printf: Fromatting and Printing Data
+    - Escape Sequences
+    - Format Specifiers
+    - Width Specifiers
+    - Printing to a Variable
+  - Line Continuation
+  - Standard Input/Output Steams and Redirection
+    - Redicection: >, >>, and <
+  - Reading Input
+  - Pipelines
+  - Command Substitution
+III: Looping and Branching
+  - Exit Status
+  - Testing an Expression
+    - test, a.k.a. [...]
+    - Evaluate an Expression
+    - Evaluate an Arithemetic Expression
+  - Conditional Execution
+    - if
+    - Conditional Operators, && and ||
+    - case
+  - Looping
+    - while
+    - until
+    - for
+    - break
+    - continue
+IV: Command-Line Parsing and Expansion
+  - Quoting
+  - Brace Expansion
+  - Tilde Expansion
+  - Parameter and Variable Expansion
+  - Arithemtic Expansion
+  - Command Substitution
+  - Word Splitting
+  - Pathname Expansion
+  - Process Substitution
+  - Parsing Options
+V: Parameters and Variables
+  - The Naming of Variables
+  - THe Scope of a Variable: can You See It from Here?
+  - Shell Variables
+  - Parameter Expansion
+  - Positional Parameters
+  - Arrays
+    - Integer-Indexed Arrays
+    - Associative Arrays
+VI: Shell Functions
+  - Definition Syntax
+  - Compound Commands
+  - Getting Results
+    - Set Different Exit Codes
+    - Print the Result
+    - Place Results in One or More Variables
+  - Function Libraries
+    - Using Functions from Libraries
+VII: String Manipulation
+  - Concatenation
+  - Processing Character by Character
+  - Case Conversion
+  - Comparing COntents Without Regard to Case
+  - Check for Valid Variable Name
+  - Insert One String into another
+  - Overlay
+  - Trim Unwanted Characters
+  - Index
+VIII: File Operations and Commands
+  - Reading a file
+  - External Commands: cat, head, touch, ls, cut, wc
+  - Regular Expression: grep,sed, awk
+  - File Name Expansion Options: \*glob, 
+IX: Reserved Words and Built-In Commands
+  - help, Display Information About Built-In Commands
+  - time, print time taken for execution of a command
+  - read, read a line from an input stream
+  - type, display information about commands
+  - builtin, execute a built-in command
+  - command, execute a command or display information about commands
+  - pwd, print the current working directory
+  - deprecated Built-Ins
+  - Dynamically Loadable Built-Ins
+  - Writing Bug-Free Scripts and Debugging the Rest
+    - Prevention is better then cure: Structure, Documentation, Formating, KISS
+    - Debugging a Script
+X: Programming for the Command Line
+  - Manipulating the Directory Stack: cd, pd, cdm, menu
+  - Filesystem Functions: l, lsr, cp, mv, md
+  - Miscellaneous Functions: pr1, calc
+  - Managing Man Pages: sman, sus, k
+XI: Runtime Configuration
+  - Defining Variables
+  - Command-Line Options and Arguments
+  - Menus
+  - Q&A Dialogue
+  - Configuration Files
+  - Scripts with Several Names
+  - Environment Variables
+XII: Data Processing
+  - Arrays
+    - Holes in an indexed array
+    - ysing an array for sorting
+  - Data File Formats
+    - line-based records
+    - block file formats
+XIII: Entry-Level-Programming
+  - Single-Key Entry
+  - History in Scripts
+  - Sanity Checking
+  - Form Entry 
+  - Reading the Mouse
+XIV: Shell Variables
 
+### From Bash to Z Shell
+
+I: Introduction to Shell
+  - The Fiesystem: Directories, Pathnames
+  - Where the Commands are located
+  - Relative Pathnames and your current directory
+  - building pathnames with wildcards
+  - expansion and subsitution
+  - builidng pathnames by completion
+  - command line editing
+II: Using Shell Features Together
+  - Writing Output to Files: Redirection
+  - Using Programs Togehter: Pipes
+  - Joining Forces
+  - Editing Data, Continuing Command Lines
+  - Command Substitution
+  - for and foreach loops
+  - Building Our Scripts
+  - Making a Script File
+  - Running a script
+  - Using the Results (via Aliases and Functions)
+III: Moe Shell Features
+  - Passing info to processes with environment variables
+  - starting ans stopping processes: Signals, Job Control
+  - Control Shell Interpretation with quoting
+  - quick directory changes with cdpath
+IV: Entering and Editing the Command Line
+  - Line Editing Basics
+  - Beyond Keystrokes: Commands and Bindings
+  - Options for Editing
+  - Multiline Editing and the zsh Editor Stack
+  - Keyboard Macros
+  - Other Tips on Terminals
+V: Starting the Shell
+  - Startup Files, Login, and Interactive Shells
+  - Shell options
+  - getting started with cygwin
+VI: Moe About Shell History
+  - Setting Up Variables
+  - "bang" History: the use of exclamation marks
+  - more options for manipulating history
+  - History tricks
+VII: Prompts
+  - Basic Prompting
+  - checking for mail and idle terminals
+VIII: Files and Direcotories
+  - Types of Files
+  - Finding Commands and Files
+  - Managing Direcotries with the Shell
+  - more argument handling: braces
+  - redirection
+  - here-documents and here-strings
+XI: Pattern Matching
+  - Basic Globbing
+  - Internationalization and Locales
+  - Globbing
+X: Completion
+  - Getting Started with Completion
+  - Listing and Formatting Possible Matches
+  - Types of Completion
+  - Controlling Matching
+  - Reducing the Number of Matches
+  - Automatically Added Suffices
+  - Exact Ambiguous Matches
+XI: Jobs and Processes
+  - Mastering Job Control
+  - High-Power Command Subsitutions
+  - Resouce Limits
+XII: Variables
+  - Arrays
+  - Variable Attributes
+  - Numeric Variables and Arithemetic
+  - Complex Variable Expansions
+  - Associative Arrays
+  - Variable Indirection
+XIII: Scripting and Functions
+  - Input and Output
+  - Propagating Functions
+  - Traps and Special Functions
+  - Defining New Globbing Qualifiers
+  - Debugging Scripts
+XIV: Writing Editor Commands
+  - Widgets and Functions
+  - Making Widgets Behave naturally
+  - input and output within widgets
+XV: Writing Completion Functions
+  - Completions
+  - Helper Functions
+  - Handing Styles
+  - Making full use of tags
+  - tags, labels and descriptions
+  - prefixes and suffixes
+  - stand-alone completion widgets
+
+
+## Personal Table of Content
+### Compendium of Commands sorted by themes:
+Dateien verwalten
+Dateien suchen
+Dateien kompimieren und archivieren
+Textdateien verarbeiten
+Accress Control Lists (ACLs) and Extended Attributes (EAs)
+Konverter
+Prozesse verwalten
+Benutzer und Gruppen verwalten
+Dateisystem administrieren
+Paketverwaltung
+Netzwerk administrieren
+Datenbank- und Server-Administration
+Hardware-Verwaltung
+Kernel
+Systemstart und -stopp, Init-System, Logging und GRUB
+Terminal und Textkonsole
+Online-Hilfe
+bash-Programming
+bash-Variablenverwaltung
+Tastenkuerzel

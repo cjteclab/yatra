@@ -19,7 +19,7 @@ At github I additionally maintain a repository project that allow me to collect 
 ## Map/Overview of the second journey
 
 # Yatra                                                                        
-## Personal Growth                                                             
+## Softskills
 ### English                                                                    
 ### 10FingerTyping                                                             
 ## Programming                                                                 
