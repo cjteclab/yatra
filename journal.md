@@ -17,20 +17,19 @@ Overall this file use markdown.
 
 ### guide: marks
 This file use different marks which can be searched and further processed by 
-bash scripts. Every mark starts with a mark**S** and ends with a mark**E**. 
-Additional, each mark starts with doulbe **@@**. Each theme in the marks is 
-part of the **table of content**.
+bash scripts. Every mark starts with `@@mark:theme` and ends with `@@` in the
+next line. Each theme in the marks is part of the **table of content**.
 
 All marks are shown below:
 
-@@todo:theme + @@todo  
-@@shortcut:theme + @@shortcut  
-@@command:theme + @@command
-@@important:theme + @@important  
-@@question:theme + @@question  
-@@learned:theme + @@learned
-@@link:theme + @@link  
-@@bestpractice:theme + @@bestpractice  
+@@todo  
+@@shortcut  
+@@command  
+@@important  
+@@question  
+@@learned  
+@@link  
+@@bestpractice  
 
 ### guide:headings
 1. Headings are written in small letters.
@@ -66,8 +65,8 @@ C/C++
 Rust  
 Software Development (XP Programming)  
 
-## firefox:shorcuts
-@@shortcut:firefox  
+## firefox: shorcuts
+@@shortcut: firefox  
 | shortcut | description |
 | -------- | ----------- |
 | `ctrl + t` | open a new tab |
@@ -81,41 +80,41 @@ Software Development (XP Programming)
 | `ctrl + F5` | reload and override cache |
 | `ctrl + tab` | cycle tabs |
 | `alt + #num` | go to tab #num |
-@@shortcut
+@@
 
-@@bestpractice:firefox  
+@@bestpractice: firefox  
 Use firefox in window1. The first tab is always *google translater* 
 (german-enlgish). Your courser will always be focused in the german input 
 field. You can select everything with `ctrl + a` and can type new content.  
-@@bestpractice  
+@@
 
 
 ---------- 20231219 ----------
 
 
-## markdown:syntax
+## markdown: syntax
 
-@@learned:markdown  
+@@learned: markdown  
 You can create **line breaks** or go to a new line (like \<br\> in html) by 
 end a line with **two or more space** and then return.  
-@@learned  
+@@  
 
-@@link:markdown  
+@@link: markdown  
 [markdown guide with cheatsheet and syntax descriptions](https://www.markdownguide.org/)  
-@@link  
+@@  
 
-## firefox:bookmarks
+## firefox: bookmarks
 
-@@bestpractice:firefox  
+@@bestpractice: firefox  
 In the firefox *Bookmarks Menu* I added directories for each themeblock.  
-@@bestpractice
+@@  
 
 ## neovim:configuration
 
 @@link:neovim  
 [neovim - mainpage](https://neovim.io/)  
 [neovim - build your first config file](https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/)  
-@@link  
+@@  
 
 ## neovim:set up your configuration file
 
@@ -129,7 +128,7 @@ language created specifically for vim.
 
 @@todo:noevim  
 read and learn neovim commands (like :write, :edit, :call)
-@@todo 
+@@  
 
 - to access neovim setting in your lua script, you have to enter the module `vim`
     - `vim.opt` has over 350 options 
@@ -163,16 +162,17 @@ read and learn neovim commands (like :write, :edit, :call)
 | `:help option-list` | shows a list of all options |
 | `:edit $MYVIMRC` | you can edit your init.lua configuration file |
 | `:echo mapleader` | check the <leader> key | 
-@@command  
+@@
 
 - each option has a scope (eg. global)
 
 @@question:neovim  
 What is the leader key (and mapleader) an why should I use it?
-@@question
+@@  
+
 @@learned:neovim  
-The **leader key** (also called **mapleader**) is a way of extending the power of VIM's shortcuts by using
-sequences of keys to perform a command. The default leader key is backslash. 
+The **leader key** (also called **mapleader**) is a way of extending the power 
+of VIM's shortcuts by using sequences of keys to perform a command. The default leader key is backslash. 
 Most change this to comma. It is a way of creating a namespace for commands you
 want to define. Vim already maps most keys and combinations of `Ctrl` + key, so 
 \<leader\> is where you (or plugins) can add custom behavior. E.G.: For example,
@@ -181,7 +181,7 @@ might find it convenient to map a command via nmap <leader>d 3dw7x so that
 pressing the leader key followed by d will delete 3 words and 7 characters. 
 Because it uses the leader key as a prefix, you can be (relatively) assured 
 that you're not stomping on any pre-existing behavior.  
-@@learned
+@@
 
 
 ---------- 20231220 ----------
@@ -205,7 +205,7 @@ We can extend the standard neovim config by:
 A common convention is to put every module we create into a single folder. We do
 this to avoid any potential conflict with a plugin. Add those modules in the 
 init.lua by calling `require()`.
-@@bestpractice
+@@
 
 @@learned:neovim require function  
 `require()` only execute code once. This can be a problem if we want to reload
@@ -220,17 +220,69 @@ end
 
 load('user.settings') --for example
 ```
-@@learned
+@@
+
+[source](https://vonheikemen.github.io/devlog/tools/neovim-plugins-to-get-started/)
+
+@@command:neovim  
+`:set packpath?` - list all available direcotries  
+`:lua vim.tbl_map(print, vim.opt.packpath:get())` - list all available 
+direcotries (visual pimped)  
+`:help packages` - help page for packages  
+@@  
+
+@@bestpractice:neovim plugin folder
+Create a directory and where we create a **package** (a folder that contains 
+several plugins. Inside this **package** we create two other folders (1) start 
+and (2) opt (those plugins will only be loaded if we execute the command 
+`packadd`.
+@@  
+
+@@learned: neovim plugin
+We can (a) create our own plugin folders called **package**. Put the source code
+inside those packages and configure the plugins by our own. Or we can use a 
+**plugin manager** that handles everything for us.  
+@@  
+
+@@question: neovim plugin manager  
+Which plugin manager should I use?
+1. lazy.nvim
+2. packer.nvim
+3. paq.nvim
+
+@@bestpractice: colorscheme
+I change my terminal colorscheme via: /Edit/Properties/Unnamed/Colors:  
+Text and Background Color: solarized dark  
+Palette: solarized  
+The colorscheme in neovim I changed via: `:colorscheme slate`  
+@@  
 
 
+---------- 20231221 ----------
 
+@@question: vim shortcut
+I want to write 10 similar chars in one step (eg: (10x) ----------)
+How can I move one line up or down?
+How can I change mulitple appearances of one word? How can I select a specific
+number of appearances?
+After using f (what is the other char search button) how can I move to the next
+appearance of this char.
+@@
 
+@@shorcut: vim
+| shortcut | description |
+| -------- | ----------- |
+| `N f{char}` | to the Nth occurence of {char} to the right |
+| `N F{char}` | to the Nth occurence of {char} to the left |
+| `N t{char}` | till before the Nth occurence of {char} to the right |
+| `N T{char}` | till before the Nth occurence of {char} to the left |
+| `N ;` | repeat the last "f/F/t/T" N times |
+| `N ,` | repeat the last "f/F/t/T" N times in opposite direction |
+@@
 
-
-
-
-
-
+@@link: vim  
+[neovim quickref](http://neovim.io/doc/user/quickref.html)  
+@@  
 
 
 
