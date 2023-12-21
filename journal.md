@@ -278,13 +278,52 @@ appearance of this char.
 | `N T{char}` | till before the Nth occurence of {char} to the left |
 | `N ;` | repeat the last "f/F/t/T" N times |
 | `N ,` | repeat the last "f/F/t/T" N times in opposite direction |
+| `N i {char/string} ESC` | instert {char/string} N times |
+| `:s/foo/bar/g` | Find each occurrence of foo (in current line) and replace it with bar |
+| `:%s/foo/bar/g` | Find each occurrence of foo (in all lines) and replace it with bar |
+| `:%s/foo/bar/gc` | Change each foo to bar, but ask for confirmation |
 @@
 
 @@link: vim  
 [neovim quickref](http://neovim.io/doc/user/quickref.html)  
 @@  
 
+@@learned: vim shortcut  
+If you want to move a line or multi lines up or down the best way to achieve this
+is by delete the line/lines (dd) and paste it/them (p/P) where you want them. In
+vim there is no shortcut like in vscode `alt + up/down`.  
+@@  
 
+## linux: linuxjourney
 
+[linuxjourney.com](https://linuxjourney.com/)  
 
+### Command Line
+- shell line: `username@hostname:current_directory` 
+- everything in linux is a file. And every file is organized in a hierarchical 
+directory tree.
+- **absolute** vs. **relative** path: absolute path starts always with `/` (starting 
+from root). Using relative paths we often work with:
+| shortcut | description |
+| -------- | ----------- |
+| `.` | current directory |
+| `..` | parent directory |
+| `~` | home directory |
+| `-` | previous directory |
+- **Commands**: basic form: `command {flags} {arguments}`
+- **Flags**: You can combine multipe flags (read from left to right *ordered*)
+- `touch` is also used to change the timestamps on existing files and directories.
+- **wildcard**:
+| wildcar | description |
+| ------- | ----------- |
+| `*` | represent all single characters or strings (eg. \*.jpg) |
+| `?` | represent one character |
+| `[]` | represent any character within the brackets |
+- when you want to copy a direcotry that contains files, you have to copy the 
+directory recursively with `cp -r`.
+- If you need more information about a command there are different sort of help:
+    1. help or --help
+    2. man
+    3. whatis
+-
 
