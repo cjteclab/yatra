@@ -23,7 +23,7 @@ next line. Each theme in the marks is part of the **table of content**.
 All marks are shown below:
 
 @@todo  
-@@shortcut  
+@@keybinding  
 @@command  
 @@important  
 @@question  
@@ -66,8 +66,8 @@ Rust
 Software Development (XP Programming)  
 
 ## firefox: shorcuts
-@@shortcut: firefox  
-| shortcut | description |
+@@keybinding: firefox  
+| keybinding | description |
 | -------- | ----------- |
 | `ctrl + t` | open a new tab |
 | `ctrl + w` | close tab |
@@ -172,7 +172,7 @@ What is the leader key (and mapleader) an why should I use it?
 
 @@learned:neovim  
 The **leader key** (also called **mapleader**) is a way of extending the power 
-of VIM's shortcuts by using sequences of keys to perform a command. The default leader key is backslash. 
+of VIM's keybindings by using sequences of keys to perform a command. The default leader key is backslash. 
 Most change this to comma. It is a way of creating a namespace for commands you
 want to define. Vim already maps most keys and combinations of `Ctrl` + key, so 
 \<leader\> is where you (or plugins) can add custom behavior. E.G.: For example,
@@ -260,7 +260,7 @@ The colorscheme in neovim I changed via: `:colorscheme slate`
 
 ---------- 20231221 ----------
 
-@@question: vim shortcut
+@@question: vim keybinding
 I want to write 10 similar chars in one step (eg: (10x) ----------)
 How can I move one line up or down?
 How can I change mulitple appearances of one word? How can I select a specific
@@ -269,8 +269,8 @@ After using f (what is the other char search button) how can I move to the next
 appearance of this char.
 @@
 
-@@shorcut: vim
-| shortcut | description |
+@@keybinding: vim
+| keybinding | description |
 | -------- | ----------- |
 | `N f{char}` | to the Nth occurence of {char} to the right |
 | `N F{char}` | to the Nth occurence of {char} to the left |
@@ -288,10 +288,10 @@ appearance of this char.
 [neovim quickref](http://neovim.io/doc/user/quickref.html)  
 @@  
 
-@@learned: vim shortcut  
+@@learned: vim keybinding  
 If you want to move a line or multi lines up or down the best way to achieve this
 is by delete the line/lines (dd) and paste it/them (p/P) where you want them. In
-vim there is no shortcut like in vscode `alt + up/down`.  
+vim there is no keybinding like in vscode `alt + up/down`.  
 @@  
 
 ## linux: linuxjourney
@@ -304,7 +304,7 @@ vim there is no shortcut like in vscode `alt + up/down`.
 directory tree.
 - **absolute** vs. **relative** path: absolute path starts always with `/` (starting 
 from root). Using relative paths we often work with:
-| shortcut | description |
+| keybinding | description |
 | -------- | ----------- |
 | `.` | current directory |
 | `..` | parent directory |
@@ -314,7 +314,7 @@ from root). Using relative paths we often work with:
 - **Flags**: You can combine multipe flags (read from left to right *ordered*)
 - `touch` is also used to change the timestamps on existing files and directories.
 - **wildcard**:
-| wildcar | description |
+| wildcard | description |
 | ------- | ----------- |
 | `*` | represent all single characters or strings (eg. \*.jpg) |
 | `?` | represent one character |
@@ -325,5 +325,34 @@ directory recursively with `cp -r`.
     1. help or --help
     2. man
     3. whatis
--
+
+---------- 20231222 ---------- 
+
+## linux: linuxjourney
+
+[linuxjourney.com](https://linuxjourney.com/)  
+
+### Linux : less navigation
+
+@@keybinding: less navigation
+| keybinding description |
+| ---------- ----------- |
+| `q` | quit out of less and go back to shell |
+| `{up}/{down}` | nagivate up or down |
+| `g` | move to beginning of file |
+| `G` | move to end of file |
+| `/{search}` | search for specific text |
+| `h` | help, while you are in less |
+@@
+
+@@command: bash help options
+| command | description |
+| ------- | ----------- |
+| `help` | some help pages can be entered by `help {command}` others by `{command} --help` |
+| `info` | some info pages can be entered by `info {command}` others by `{command} --info` |
+| `man` | manual pages - can be entered by `man {command} |
+| `whatis` | short description of the command - entered by `whatis {command}` |
+@@  
+
+
 
