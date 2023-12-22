@@ -302,6 +302,12 @@ vim there is no keybinding like in vscode `alt + up/down`.
 - shell line: `username@hostname:current_directory` 
 - everything in linux is a file. And every file is organized in a hierarchical 
 directory tree.
+
+@@important: linux  
+Everything in linux is a file. And all files are organized in a hierarchical 
+directory tree.
+@@  
+
 - **absolute** vs. **relative** path: absolute path starts always with `/` (starting 
 from root). Using relative paths we often work with:
 | keybinding | description |
@@ -354,5 +360,7 @@ directory recursively with `cp -r`.
 | `whatis` | short description of the command - entered by `whatis {command}` |
 @@  
 
+## linux: linuxjourney: Chapter Text-Fu
 
+- Processes use I/O streams to receive input and return output. 
 
