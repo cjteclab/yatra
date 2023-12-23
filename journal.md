@@ -364,3 +364,101 @@ directory recursively with `cp -r`.
 
 - Processes use I/O streams to receive input and return output. 
 
+
+---------- 20231223 ----------
+
+
+## linux: linuxjourney
+
+### linux: $PATH
+@@important: linux $PATH  
+$PATH containts a **list of paths** (separated by colon) that the system searches
+when it runs a command. If the path is not in $PATH the executable file can't be
+called by `$ {command}`.
+@@  
+
+### linux: linuxjourney - chapter: user management
+
+- any traditional operating system have **users** and **groups**.
+    - the system manage users by **user ids (UID)** (not username).
+        - mapping between UID and username is mapped in: `/etc/passwd`
+        - **ATTENTION**: every process is associated with 3 UIDS: (1) effective user ID (2) real user ID (3) saved user ID.
+    - the system manage groups by **group ID (GID)**
+        - mapping between GID and groupname is mapped in: `etc/group`
+- in most linux distribution every user has its own **home directory** and is 
+usually located in `/home/username`
+- Linux has additional users that use the system:
+    1. system daemons: they continuously run processes to keep the system functioning.
+    2. root/superuser: has all permissions and accesses
+- **sudo**: the file `etc/sudoers` lists users who can run sudo and can be edited
+by using the command `visudo`.
+- `ect/passwd` contains rows in the form `root:x:0:0:root:/root:/bin/bash`. Meaning
+of the fields:
+| field | description |
+| ----- | ----------- |
+| 1 | username |
+|2 | User's password - the password is not really stored in this file, it's usually stored in the /etc/shadow file. The symbol **x** stands for: 'password is stored in /ect/shadow'. The symbol **/*** stands for: 'the user doesn't have login access'. The symbol **{blank}** stands for: 'user doesn't have a password'. |
+| 3 | user ID |
+| 4 | group ID |
+| 5 | GECOS field: comments about the user (real name, phonenumber etc.) - comma delimited |
+| 6 | user's home directory |
+| 7 | user's shell |
+- `ect/shadow` stores information about user authentication. Contains rows in the form: `root:MyEPTEa$6Nonsense:15000:0:99999:7:::`
+    - Most distribution today, user authentication doesn't rely on just the 
+    /etc/shadow file. There are other mechanisms (PAM etc.) that replace authentication.
+- **User Management Tools**: commands: useradd, userdel, passwd
+
+### linux: linuxjourney - chapter: file permission
+
+- **file permission** has four parts e.g.: `drwxr-xr-x` --> ` d | rwx | r-x | r-x  `
+    1. The first char represent the **filetype** (d == directory, - == regular file)
+    2. **user permissions**
+    3. **group permission**
+    4. **other permissions**
+- Meaning of the characters:
+| character | meaning |
+| --------- | ------- |
+| `r` | readable |
+| `w` | writable |
+| `x` | executable |
+| `-` | empty |
+- **change permission** with `chmod`. There are 2 methods to change permission.
+    1. Using operators **+**(add) and **-**(remove): eg: u+x (add x to user)
+    2. Using **numerical format**: this method allows to change permission all at once.
+        - | number | numerical representation |
+          | ------ | ------------------------ |
+          | 4 | read permission |
+          | 2 | write permission |
+          | 1 | execute permission |
+        - Example `$ chmod 755 myfile`
+            - 7 = 4 + 2 + 1 : read, write and execute for user
+            - 5 = 4 + 1 : read and execute for group
+            - 5 = 4 + 1 : read and execute for other
+- **change ownership** by using `chown` (user ownership) and `chgrp` (group ownership)
+    - you can modify both at the same time with: `$ sudo chown username:groupname file`
+- **Set User ID (SUID)** and **Set Group ID (SGID)**: Allows to run a program as
+the owner of the program file rather than as themselves. 
+@@learned: linux SUID and SGID  
+SUID and SGID only apply to execution of files (the x in file permissions)
+@@  
+    - **SUID** is reptesented by the bit `s`. Can be modified by `u+s` or by 
+    **pre-pended** `4` to the permission set (eg: `$ sudo chmod 4755 myfile`).
+- **The Sticky Bit**: This permission bit, "sticks a file/directory" this means that only the owner or the root user can delete or modify the file. The sticky bit is represented by a `t` at the end of the **file permission** (eg: `drwxrwxrwxt`).
+    - the sticky bit can be modified by `+t` or **pre-pended** `1` (eg: `$ sudo chmod 1755 mydir`).
+
+### linux: linuxjourney - chapter processes
+
+- processes are managed by the kernel
+- each process has a **process ID (PID)**. The pid is assigned in the order that
+processes are created.
+- `$ ps` print a list of running processes. The following infos a print
+| shortcut | description |
+| -------- | ----------- |
+| PID | Process ID |
+| TTY | Controlling terminal associated with the process |
+| STAT | Process status code |
+| TIME | Total CPU usage time |
+| CMD | Name of executable/command |
+- `$ top` is similar to `ps` but it gives you a real time information about the 
+processes instead of of a snapshot. By default it will be refreshed every 10 seconds.
+
