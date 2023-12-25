@@ -556,6 +556,7 @@ the child process. **But** there is another way to terminate a process: **signal
         - Numbers can vary with signals so they are usually reffered by their names.
         - Some singnal are unblockable (eg. SIGKILL)
 
+
 #### Kill (terminate)
 A kill signal will terminate the process. 
     - You can also specify a signal with the kill command: `$ kill -9 12455`
@@ -600,10 +601,166 @@ in a special filesystem **/proc**:
     - The **+** next to the job ID means that it is the most recent background job
     that started. The job with the **-** is the second most recent command.
 3. **Sending a job to the background on existing job**
-Fist suspend the job with `Ctrl-Z` and then run the `bg` command to send it to the 
+First suspend the job with `Ctrl-Z` and then run the `bg` command to send it to the 
 background.
 4. **Moving a job from the background to the foreground**: 
 `$ fg` for the most recent background job (the one with a +) or `$ fg %1` (for the job ID)
 5. **Kill a background job** `kill %1`.
 
-3. 
+
+---------- 20231225 ----------
+
+
+### linux: linuxjourney - chapter Packages
+
+#### Software Distribution
+- you can install software with (a) a package manager or (b) directoy from source 
+code.
+- The common packages you can install with a package manger:
+    - `.deb` : Debian packages are used in: Debian, Ubuntu, LinuxMint
+    - `.rpm` : Red Hat packages are used in: Red Hat, Fedora, CentOS
+
+#### tar and gzip
+- distinguish between **archiving** and **compressing**
+- **gzip** is used to compress files in Linux (but it can't archive files)
+    - file-ending: `.gz`
+    - use `$ gzip {name}` to zip and `$ gunzip {file}.gz` to unzip a file
+- **tar** is used to archive files
+    - file-ending: `.tar`
+
+### linux: linuxjourney - chapter The Filesystem
+
+#### Filesystem Hierarchy
+- The file hierarchy in most linux distributions follow the **Filesystem Hierarchy
+Standard**
+
+@@todo: linux filesystem  
+get a overview map of the linux file system hierarchy  
+create lists for: bash commands, vim shortcuts, filesystem hierarchy  
+@@  
+
+#### File system Types
+- there are different file system types (faster/slower, supporting large capacity
+storage/smaller capacity storage. They have different ways of organizing their data.
+- To handle different file system types there is something calles **Virtual File 
+System (VFS)**. This is a abstraction layer between applications and filesystem types.
+- **Journaling**: Most file systems support **journaling**. E.g.: before your 
+machine even begins to copy the file, it will write what you're going to be 
+doing in a log file (journal). Now when you actually copy the file, once it 
+completes, the journal marks that task as complete. The filesystem is always in a 
+consistent state because of this, so it will know exactly where you left off if 
+your machine shutdown suddenly. This also decreases the boot time because instead
+of checking the entire filesystem it just looks at your journal.
+- **Common file system types**:
+| filesystem | description |
+| ---------- | ----------- |
+| ext4 | This is the most current version of the native Linux filesystems. It is 
+compatible with the older ext2 and ext3 versions. It supports disk volumes up to 
+1 exabyte and file sizes up to 16 terabytes and much more. It is the standard 
+choice for Linux filesystems. |
+| Btrfs | "Better or Butter FS" it is a new filesystem for Linux that comes 
+with snapshots, incremental backups, performance increase and much more. It is 
+widely available, but not quite stable and compatible yet. |
+| XFS | High performance journaling file system, great for a system with large
+files susch as a media server. |
+| NTFS | Windows filesystem |
+| FAT | Windows filesystem |
+| HFS+ | Macintosh filesystem |
+
+#### Anatomy of a Disk
+- each disk can be subdivided into **partitions**. Each partition can gets its 
+own filesystem.
+- **Partition Table**: Each disk has a partition table, that tells the system how
+the disk is partitioned (Information: start/end, bootable, what sectors of the disk
+are allocated to what partition. There are **2** **main partition table schemes**:
+    1. **Master Boot Rercord (MBR)**
+    2. **GUID Partition Table (GPT)**
+        - becoming the new standard for disk partitioning
+        - each partition has a **globally unique ID (GUID)**
+        - used most in conjunction with UEFI based booting
+- **Filesystem Structure**:
+    - **Boot block**: This is located in the first few sectors of the filesystem,
+    and it's not really used the by the filesystem. Rather, it contains information
+    used to boot the operating system. Only one boot block is needed by the operating
+    system. If you have multiple partitions, they will have boot blocks, but many
+    of them are unused.
+    - **Super block**:  This is a single block that comes after the boot block,
+    and it contains information about the filesystem, such as the size of the 
+    inode table, size of the logical blocks and the size of the filesystem.
+    - **Inode table**: Think of this as the database that manages our files. Each
+    file or directory has a unique entry in the inode table and it has various 
+    information about the file.
+    - **Data blocks**: This is the actual data for the files and directories.
+
+#### mount and unmount
+To view the content of a filesystem, you have to **mount** it.. The **mount point**
+is a directory on the system where the filesystem is going to be attached. "We want
+to mount our device to a mount point".
+- **Device's universally unique ID (UUID)**: a ID for each device.
+- **/etc/fstab** (pronounced: "eff es tab"): This file contains a permanent list
+of filesystems that are mounted at startup.
+
+#### Inodes
+An inode (index node) is an entry in the **inode table** and there is one for every file.
+Stored information (everything about a file, except the filename and the file itself):
+    - file type (regular file directory, character device, etc)
+    - owner
+    - group
+    - access permissions
+    - timestamps (mtime(time of last modification), ctime(time of last attribute change),
+    atime (time of last access))
+    - number of hardlinks to the file
+    - size of the file
+    - number of blocks allocated to the file
+    - pointers to the data block of the file - **most important**!!!!
+
+**When are inodes created?** When a filesystem is created, space for inodes is allocated
+as well. There are algorithms that take place to determine how much inode space
+you need depending on the volume of the disk and more. To create a file depend of, if
+there is enough space for a inode, too.  
+
+@@important: linux filesystem and inodes
+Data storage depends on both (a) the data and (b) the database(inodes)  
+@@  
+
+Inodes are identified by numbers, when a file gets created it is assigned an inode 
+number, the number is assigned in sequential order. Once inodes are deleted, 
+they can be reused by other files.
+
+**How do inodes locate files?**: We know our data is out there on the disk somewhere,
+unfortunately it probably wasn't stored sequentially, so we have to use inodes.
+Inodes point to the actual data blocks of your files. In a typical filesystem
+(not all work the same), each inode contains 15 pointers, the first 12 pointers
+point directly to the data blocks. The 13th pointer, points to a block containing
+pointers to more blocks, the 14th pointer points to another nested block of pointers,
+and the 15th pointer points yet again to another block of pointers! Confusing, I 
+know! The reason this is done this way is to keep the inode structure the same 
+for every inode, but be able to reference files of different sizes. If you had a 
+small file, you could find it quicker with the first 12 direct pointers, larger 
+files can be found with the nests of pointers. Either way the structure of the 
+inode is the same. 
+
+#### symlinks
+
+- **link count**: The link count is the total number of hard links a file has.
+- **Symlinks**: Its like a shorcut (a aliases to other files) from Windows operating
+system. A **symlink** (**symbolic link / soft link**) allow us to link to another file
+by its filename. It **points** to a filename.
+    - When you modify a symlink, the file also gets modified.
+    -  Inode numbers are unique to filesystems, you can't have two of the same
+    inode number in a single filesystem, meaning you can't reference a file in a 
+    different filesystem by its inode number. However, if you use symlinks they
+    do not use inode numbers, they use filenames, so they can be referenced 
+    across different filesystems. 
+- **Hardlinks**: A hardlink just creates another file with a link to the same inode.
+So if I modified the contents of myfile2 or myhardlink, the change would be seen on 
+both, but if I deleted myfile2, the file would still be accessible through myhardlink.
+Here is where our link count in the ls command comes into play. The link count is the 
+number of hardlinks that an inode has, when you remove a file, it will decrease 
+that link count. The inode only gets deleted when all hardlinks to the inode have
+been deleted. When you create a file, it's link count is 1 because it is the only
+file that is pointing to that inode. Unlike symlinks, hardlinks do not span 
+filesystems because inodes are unique to the filesystem.
+
+
+##
