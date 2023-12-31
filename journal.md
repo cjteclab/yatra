@@ -763,4 +763,9 @@ file that is pointing to that inode. Unlike symlinks, hardlinks do not span
 filesystems because inodes are unique to the filesystem.
 
 
-##
+---------- 20231231 ----------
+
+
+@@todo: themes
+- it-security: network security
+- it-security: anonymous and secure surving
