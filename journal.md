@@ -769,3 +769,33 @@ filesystems because inodes are unique to the filesystem.
 @@todo: themes
 - it-security: network security
 - it-security: anonymous and secure surving
+
+
+---------- 20240108 ----------
+
+
+## Learning about API
+
+API == Application Programming Interface
+- it is a set of protocols that enable different software components to communicate
+and transfer data.
+
+### How API works
+Communication is applied by **request and response cycle**
+*API client*: is responsible for assembling requests (in response to user action) and 
+sending them to the appropriate *API endpoint*
+*API endpoint*: is a UniformResouceIdentifier (URI) : provide access to specific resource in a database
+
+### API architectures
+#### REST
+Operations are performed with standard HTTP methods (GET, POST, PUT, DELETE). Use JSON.
+#### SOAP
+Simpe Object Access Protocol: Uses XML to transfer heigly structured message
+#### GraphQL
+is a open source query language. Enables clients to interact with a signle API endpoint
+to retrieve the exact data they need, without chaining multiple requests together.
+#### Webhooks
+Even-based triggeres to pre-configured webhook URL
+
+
+protocol, communicate, transfer data, different types of API
