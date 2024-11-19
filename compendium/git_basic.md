@@ -1,5 +1,11 @@
 # GIT BASIC
 
+## Table Of Content
+- How to create a git repository and link it with an github repository by ssh-key
+- How to change the standard editor in git
+
+---
+
 ## How to create a git repository and link it with an github repository by ssh-key
 
 ### Step 1 - Prepare Host
@@ -64,5 +70,7 @@ ssh -T git@github.com
 ```bash
 git push origin main
 ```
+
+---
 
 ## How to change the standard editor in git
