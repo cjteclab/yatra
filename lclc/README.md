@@ -91,11 +91,6 @@ Thank you to all contributors and supporters for making this project a growing a
 
 ---
 
-## 📜 License
-This project is licensed under the [MIT License](LICENSE), allowing free use, modification, and distribution.
-
----
-
 ## ✉️ Contact
 Have questions or suggestions? Reach out to **cjteclab@gmail.com** or open an issue in this repository.
 
