@@ -97,5 +97,5 @@ This project is licensed under the [MIT License](LICENSE), allowing free use, mo
 ---
 
 ## ✉️ Contact
-Have questions or suggestions? Reach out to **papillon@example.com** or open an issue in this repository.
+Have questions or suggestions? Reach out to **cjteclab@gmail.com** or open an issue in this repository.
 
